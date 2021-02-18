@@ -6,15 +6,11 @@ baliky = {
     "B947X": False,
 }
 
-cislo = 'cislo'
 cislo = input("Zadej číslo balíku: ")
-if (cislo in baliky) and (baliky[cislo] == True):
-    print("Balík byl předán kurýrovi.")
-else:
-    if (cislo in baliky) and (baliky[cislo] == False):
-        print("Balík zatím nebyl předán kurýrovi.")
+if cislo in baliky:
+    if baliky[cislo]:
+        print("Balík byl předán kurýrovi.")
     else:
-        print("Bohužel, takový balík neexistuje.")
-
-"""Dotaz - lze v Pythonu pouzit nejake to elseif, abych nemusela vnorit podminku? 
-Chtela jsem osetrit situaci, kdy balik zadaneho cisla neexistuje"""
+        print("Balík zatím nebyl předán kurýrovi.")
+else:
+   print("Bohužel, takový balík neexistuje.")
