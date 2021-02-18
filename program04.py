@@ -46,15 +46,10 @@ morseCode = {
     ")": "-.--.-"
 }
 
-textik = ''
-i = 0
-morse = ''
+textik = input("Dobrý den. Zadejte text, který vám obratem převedu na Morseovku: ")
 
-textik = input("Dobrý den. Zadejte text, který vám obratem převedu na Morseovku.")
-
-for i in range(len(textik)):
-    morse = textik[i]
-    if morse == ' ':
+for znak in textik:
+    if znak == ' ':
        print("/", end=' ')
     else:
-       print(morseCode[morse], end=' ')
+       print(morseCode[znak], end=' ')
