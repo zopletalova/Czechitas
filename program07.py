@@ -495,11 +495,12 @@ i = 0
 for item in staty:
     if item["region"] == regU:
         i += 1
-        if item['subregion'] not in PopSubregion:
-            key = item['subregion']
+        key = item['subregion']
+        if key not in PopSubregion:
             PopSubregion[key] = item["population"]
         else:
-            PopSubregion[key] += item['population']
+            PopSubregion[key] += item["population"]
+
 if i == 0:
     print("Neznámý region.")
 else:
