@@ -498,6 +498,8 @@ for item in staty:
         if item['subregion'] not in PopSubregion:
             key = item['subregion']
             PopSubregion[key] = item["population"]
+        else:
+            PopSubregion[key] += item['population']
 if i == 0:
     print("Neznámý region.")
 else:
