@@ -33,5 +33,18 @@ def getSance(odvetvi, obrat, zeme, konf=False, news=False):
 odvetvi = input("Zadejte odvětví: ")
 obrat = int(input("Zadejte obrat v (celých) mil. Eur: "))
 zeme = input("Zadejte zemi: ")
-sance = getSance(odvetvi, obrat, zeme)
+
+konfs= input("Zčastnil se zákazník konference? Ano - zadejte 'y': ")
+if konfs == "y":
+  konf = True
+else:
+  konf = False
+
+newss = input("Odebírá zákazník konference? Ano - zadejte 'y': ")
+if newss == "y":
+  news = True
+else:
+  news = False
+
+sance = getSance(odvetvi, obrat, zeme, konf, news)
 print(f"Šance na získání zakázky je: {sance}")
