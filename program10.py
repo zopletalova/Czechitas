@@ -17,16 +17,10 @@ def getSance(odvetvi, obrat, zeme, konf=False, news=False):
   elif zeme in {"Německo", "Francie"}:
     body += 2
 
-  print("Zúčastnil se zákazník konference? Pokud ano, zadejte 'y'.")
-  konfS = input("Jinak dejte třeba jen enter: ")
-  if konfS == "y":
-    konf = True
+  if konf:
     body += 1
 
-  print("Odebírá zákazník newsletter? Pak zadejte písmeno 'y'.")
-  newsS = input("Jinak dejte třeba jen enter: ")
-  if newsS == "y":
-    news = True
+  if news:
     body += 1
 
   if body in {6, 7, 8}:
