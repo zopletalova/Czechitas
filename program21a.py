@@ -4,7 +4,7 @@ import pandas as pd
 
 akcie = pd.read_csv("twlo.csv")
 
-# tady jsem si udělala hezčí id od 1 :-)
+# tady jsem si udělala hezčí id :-)
 akcie = akcie.rename(columns={"Unnamed: 0": "id"})
 
 
@@ -24,4 +24,4 @@ print(akcie.head(n=5))
 print(akcie.iloc[:5])
 
 # prvních pět řádků zase jinak :-)
-print(akcie[akcie["id"]<6])
+print(akcie[akcie["id"]<5])
