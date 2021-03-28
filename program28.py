@@ -46,7 +46,11 @@ print()
 #FutureWarning:
 #Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
 #To mi napsal na ten následující řádek, i když to teda spočítal. Jak bych to měla napsat jinak?
+<<<<<<< HEAD
 subregiony = staty_gdp.groupby(["subregion"])["population", "gdp2019"].sum()
+=======
+subregiony = staty_gdp.groupby(["subregion"])[["population", "gdp2019"]].sum()
+>>>>>>> 10bc3b0 (Commit)
 subregiony["gdp_head2019"] = subregiony["gdp2019"]/subregiony["population"]
 print(subregiony)
 
