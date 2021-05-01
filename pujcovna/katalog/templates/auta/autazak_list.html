@@ -1,0 +1,17 @@
+{% block content %}
+<h2 align='center'><font color='fuchsia'>Nabízíme vám tato auta:</font></h2>
+<table>
+  <tr>
+    <td><b>Značka - typ</b></td>
+  </tr>
+  {% for auto in object_list %}
+  <tr>
+    <td>{{auto.zn_typ}}</td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td>Jejda, zatím nemáme žádné auto! :-)</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
