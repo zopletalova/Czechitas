@@ -1,0 +1,31 @@
+{% block content %}
+<h2 align='center'><font color='fuchsia'>Auta</font></h2>
+<table>
+  <tr>
+    <td><b>RZ</b></td>
+    <td><b>Značka - typ</b></td>
+    <td><b>Najeto km</b></td>
+    <td><b>Datum technické</b></td>
+    <td><b>Dní od technické</b></td>
+  </tr>
+  {% for auto in object_list %}
+  <tr>
+    <td>{{auto.RZ}}</td>
+    <td>{{auto.zn_typ}}</td>
+    <td>{{auto.najeto_km}}</td>
+    <td>{{auto.dat_technicke}}</td>
+    <td>{{auto.odtechnicke}}</td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td>Jejda, zatím nemáme žádné auto! :-)</td>
+  </tr>
+  {% endfor %}
+</table>
+<br>
+{% url 'vypujcky_list' as vypujcky_list %}
+<a href="{{ vypujcky_list }}">Seznam výpůjček</a>
+<br>
+{% url 'zakaznici_list' as zakaznici_list %}
+<a href="{{ zakaznici_list }}">Seznam zákazníků</a>
+{% endblock %}
