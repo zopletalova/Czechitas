@@ -1,0 +1,16 @@
+{% block content %}
+<h2 align='center'><font color='blue'>Výpůjčky</font></h2>
+<ul>
+    <li> <b>ID číslo výpůjčky, auto, zákazník, vypůjčeno, vráceno, cena, stav </b></li>
+    {% for vypujcka in object_list %}
+    <li>{{vypujcka.id_cislo}}, {{vypujcka.auto}}, {{vypujcka.zakaznik}}, {{vypujcka.vypujceno}}, {{vypujcka.vraceno}}, {{vypujcka.cena}}, {{vypujcka.urcistav}}</li>
+    {% empty %}
+    <li>Jejda, zatím jsme nic nevypůjčili! :-)</li>
+    {% endfor %}
+</ul>
+{% url 'auta_list' as auta_list %}
+<a href="{{ auta_list }}">Seznam aut</a>
+<br>
+{% url 'zakaznici_list' as zakaznici_list %}
+<a href="{{ zakaznici_list }}">Seznam zákazníků</a>
+{% endblock %}

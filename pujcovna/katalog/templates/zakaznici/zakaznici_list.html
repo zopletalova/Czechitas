@@ -1,0 +1,30 @@
+{% block content %}
+<h2 align='center'><font color='fuchsia'>Zákazníci</font></h2>
+<table>
+  <tr>
+    <td><b>Jméno</b></td>
+    <td><b>Příjmení</b></td>
+    <td><b>Číslo řidičáku</b></td>
+    <td><b>Datum narození</b></td>
+  </tr>
+  {% for zakaznik in object_list %}
+  <tr>
+    <td>{{zakaznik.jmeno}}</td>
+    <td>{{zakaznik.prijmeni}}</td>
+    <td>{{zakaznik.RP_cislo}}</td>
+    <td>{{zakaznik.dat_narozeni}}</td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td>Jejda, zatím nemáme žádného zákazníka! :-)</td>
+  </tr>
+  {% endfor %}
+</table>
+<br>
+{% url 'vypujcky_list' as vypujcky_list %}
+<a href="{{ vypujcky_list }}">Seznam výpůjček</a>
+<br>
+{% url 'auta_list' as auta_list %}
+<a href="{{ auta_list }}">Seznam aut</a>
+<br>
+{% endblock %}
